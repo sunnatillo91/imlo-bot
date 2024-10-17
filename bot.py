@@ -3,7 +3,7 @@ import logging
 
 from aiogram import Bot, Dispatcher, types
 from aiogram.fsm.storage.memory import MemoryStorage
-from  checkWord import  checkWord, is_latin, is_cyrillic
+from  checkWord import  checkWord
 from aiogram.filters import Command
 from transliterate import to_latin, to_cyrillic
 

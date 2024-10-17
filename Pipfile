@@ -8,5 +8,5 @@ aiogram = "~=3.13.1"
 
 [dev-packages]
 
-[requires]
-python_version = "3.12"
+#[requires]
+#python_version = "*"
