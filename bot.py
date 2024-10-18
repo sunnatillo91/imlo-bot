@@ -8,7 +8,7 @@ from aiogram.filters import Command
 from transliterate import to_latin, to_cyrillic
 
 # Bot token can be obtained via https://t.me/BotFather
-TOKEN = "7561833317:AAErJUMSThTBuAfJ2PxwoBbU40tCkneWuGw"
+TOKEN = ""
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
