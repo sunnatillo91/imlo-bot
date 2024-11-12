@@ -6,9 +6,12 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from  checkWord import  checkWord
 from aiogram.filters import Command
 from transliterate import to_latin, to_cyrillic
+from stt_uzbekvoice import start_transcription
+# from stt import start_transcription
+
 
 # Bot token can be obtained via https://t.me/BotFather
-TOKEN = ""
+TOKEN = "7561833317:AAErJUMSThTBuAfJ2PxwoBbU40tCkneWuGw"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -24,6 +27,16 @@ async def start(message: types.Message):
 @dp.message(Command(commands='help'))
 async def help(message: types.Message):
     await message.answer("Ushbu botdan foydalanish uchun so'z yuboring)")
+
+
+@dp.message(Command(commands='transcribe'))
+async def transcribe_audio(message: types.Message):
+    await message.answer("Starting transcription...")
+
+    loop = asyncio.get_running_loop()
+    await loop.run_in_executor(None, start_transcription)  # Run transcription asynchronously
+
+    await message.answer("Transcription requested. You'll receive the text when it's ready.")
 
 @dp.message()
 async def checkImlo(message: types.Message):
@@ -52,7 +65,6 @@ async def checkImlo(message: types.Message):
             await message.answer(to_latin(response))  # Convert the response back to Latin
         else:
             await message.answer(response)  # Already in Cyrillic, no need to convert
-
 
 async def main():
     # Fetch and discard all pending updates (if you want to skip them)
