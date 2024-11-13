@@ -5,12 +5,12 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 def start_transcription():
     # Configuration
     url = "https://uzbekvoice.ai/api/v1/stt"
-    api_key = "7a3dea09-8d9d-45cd-b204-6ebb79ed9bb3:50f201d8-dc5d-4c4f-8635-d1dec68ab0fc"  # Replace with actual API key
+    api_key = ""  # Replace with actual API key
     file_path = r"D:/Programming/call_analysis/name(26).mp3"  # File path
 
     # Telegram bot details
-    telegram_bot_token = "7561833317:AAErJUMSThTBuAfJ2PxwoBbU40tCkneWuGw"  # Replace with your bot token
-    chat_id = "7561833317"  # Replace with the chat ID
+    telegram_bot_token = ""  # Replace with your bot token
+    chat_id = ""  # Replace with the chat ID
 
     def send_message_to_telegram(text):
         """Send a message to a specified Telegram chat."""
